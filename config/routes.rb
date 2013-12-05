@@ -1,4 +1,17 @@
 TurSiteTry1::Application.routes.draw do
+  #get "static_pages/home"
+  #get "static_pages/news"
+  #get "static_pages/about"
+  #get "static_pages/services"
+  #get "static_pages/excursions"
+
+  root 'static_pages#home'
+  match '/excursions', to: 'static_pages#excursions', via: 'get'
+  match '/services',   to: 'static_pages#services',   via: 'get'
+  match '/news',       to: 'static_pages#news',       via: 'get'
+  match '/about',      to: 'static_pages#about',      via: 'get'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
