@@ -45,6 +45,7 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'slim-rails'
-gem 'compass-rails'
+#gem 'compass-rails'
+gem 'compass-rails', github: "Compass/compass-rails", branch: "rails4-hack"
 gem 'tilt'
 gem 'susy'

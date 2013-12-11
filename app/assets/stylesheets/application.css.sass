@@ -1,0 +1,230 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+@import compass
+@import compass/layout
+@import compass/reset
+@import susy
+
+//Rhythm
+$base-font-size: 16px
+$base-line-height: 1.5 * $base-font-size
++establish-baseline
++border-box-sizing
+
+
+
+// Setting up the Magic Grid
+$total-columns: 12 // 12 columns
+$column-width: 4em // columns are 4em wide
+$gutter-width: 1em // with 1em gutters
+$grid-padding: $gutter-width / 2 // and 1em padding on the grid container
+//$container-style: fixed
+
+//constants
+
+//background colors
+$main-black: #151f22
+$main-grey: #293335
+$main-green: #3cb371
+$main-red: #e7604a
+//text colors
+$text-main-white: #fff
+$text-main-grey: #a7a7a9
+
+//shadow colors
+$shadow-color-std: #31393d
+
+$default-text-shadow-color: $shadow-color-std
+$default-text-shadow-blur: 1px
+$default-text-shadow-v-offset: 1px
+$default-text-shadow-h-offset: 1px
+$default-text-shadow-spread: false
+
+
+//fonts
+@mixin fontUbuntu
+  font-family: 'Ubuntu', sans-serif
+  font-weight: 300
+  font-style: normal
+
+@mixin fontUbuntuI
+  font-family: 'Ubuntu', sans-serif
+  font-weight: 300
+  font-style: italic
+
+@mixin fontUbuntuB
+  font-family: 'Ubuntu', sans-serif
+  font-weight: 400
+  font-style: normal
+
+@mixin fontUbuntuBI
+  font-family: 'Ubuntu', sans-serif
+  font-weight: 400
+  font-style: italic
+
+@mixin fontUbuntuM
+  font-family: 'Ubuntu', sans-serif
+  font-weight: 500
+  font-style: normal
+
+@mixin fontUbuntuMI
+  font-family: 'Ubuntu', sans-serif
+  font-weight: 500
+  font-style: italic
+
+@mixin fontUbuntuMB
+  font-family: 'Ubuntu', sans-serif
+  font-weight: 700
+  font-style: normal
+
+@mixin fontUbuntuMBI
+  font-family: 'Ubuntu', sans-serif
+  font-weight: 700
+  font-style: italic
+
+@mixin fontUbuntuC
+  font-family: 'Ubuntu Condensed', sans-serif
+  //font-weight: 400
+
+
+@mixin links-color-only($color: black)
+  +unstyled-link
+  +link-colors($color)
+
+@mixin authentication-button($element-hight: 2 * $base-font-size, $font-size: $base-font-size, $bg-color: $main-grey)
+  //+inline-block
+  $padding-top-bottom: ($element-hight - $font-size) / 2
+  display: inline
+  background-color: $bg-color
+  margin-left: 5px
+  margin-right: 5px
+  padding: $padding-top-bottom 1em
+  +border-radius(2px)
+  +fontUbuntuM
+  +links-color-only(white)
+
+html
+  +fontUbuntu  
+
+body
+  background-color: #ebebeb
+
+$header-hight: 50px
+$font-size-logo: 24px
+$font-size-nav-links: 16px
+$font-size-authentication-buttons: 14px
+
+
+header
+  background-color: $main-black
+  height: $header-hight
+  +single-text-shadow
+
+
+  .container
+    +container()
+    susy-grid-background
+    overflow: hidden
+  
+  .logo
+    +span-columns(3)
+
+    a
+      +fontUbuntuC
+      text-transform: uppercase
+      letter-spacing: 0.1em
+      +adjust-font-size-to($font-size-logo)
+      +adjust-leading-to($header-hight/$base-line-height, $font-size-logo)
+      +links-color-only(white)
+
+  nav
+    +span-columns(6,12)
+
+    ul
+      display: table
+      width: 100%
+
+      li
+        display: table-cell
+
+    a
+      text-transform: uppercase
+      +adjust-font-size-to($font-size-nav-links)
+      +adjust-leading-to($header-hight/$base-line-height, $font-size-nav-links)
+      +links-color-only($text-main-grey)
+
+      &:hover, &:active
+        color: $text-main-white
+
+      &:active
+        font-family: fontUbuntu
+
+
+
+
+
+  .authentication
+    +span-columns(3 omega)
+    text-align: right
+
+
+
+
+    .signupButton
+      +authentication-button(30px, 14px, $main-green)
+
+    .loginButton
+      +authentication-button(30px, 14px, $main-red)
+
+    a
+      +adjust-font-size-to($font-size-authentication-buttons)
+      +adjust-leading-to($header-hight/$base-line-height, $font-size-authentication-buttons)
+      
+      // Почему не работает last-child?
+      &:last-of-type
+        margin-right: 0 
+
+      &:first-child
+        margin-left: 0
+    
+
+
+
+
+//ЭКСПЕРИМЕНТ!!!
+
+@mixin lu-btn-flat-rounded($btn-height: 2em, $font-size: 1em, $bg-color: $main-grey)
+  +links-color-only(white)  //temp
+  font-size: $font-size
+  background-color: $bg-color
+  $padding-top-bottom: ($btn-height - $font-size) / 2
+  padding: $padding-top-bottom 1em
+  margin-left: .3em
+  margin-right: .3em
+  +border-radius(2px)
+  +fontUbuntuM
+  +single-text-shadow
+
+
+
+
+  
+.buttons
+  background-color: $main-black
+  height: $header-hight
+
+  a
+    +lu-btn-flat-rounded(30px, 14px, $main-green)
+
