@@ -1,3 +1,182 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// nav {
+//   margin-left: 200px; 
+// }
+
+// nav li {
+//   display: inline;
+// }
+
+// nav a {
+//   display: inline-block;
+//   text-decoration: none;
+//   font-size: 1.2em;
+//   color: #ffffff;
+//   padding: 10px 20px;
+//   background: #ff932d;
+//   border-radius: 5px;
+//   border: 1px solid #c95e00;
+//   -moz-box-shadow:
+//     0px 0px 0px rgba(000,000,000,0),
+//     inset 0px 1px 0px rgba(255,255,255,0.7);
+//   -webkit-box-shadow:
+//     0px 0px 0px rgba(000,000,000,0),
+//     inset 0px 1px 0px rgba(255,255,255,0.7);
+//   -o-box-shadow:
+//     0px 0px 0px rgba(000,000,000,0),
+//     inset 0px 1px 0px rgba(255,255,255,0.7);
+//   box-shadow:
+//     0px 0px 0px rgba(000,000,000,0),
+//     inset 0px 1px 0px rgba(255,255,255,0.7);
+//   text-shadow:
+//     0px -1px 1px rgba(000,000,000,0.2),
+//     0px 1px 0px rgba(255,255,255,0.3);
+// }
+
+// /* My styles */
+
+// nav a {
+//   -webkit-transition: -webkit-transform .5s,
+//                       background-color 1s ease-in .5s;
+//   transition: transform .5s,
+//               background-color 1s ease-in .5s;
+// }
+
+// nav a:hover {
+//   background-color: red;
+//   -webkit-transform: scale(1.2);
+//   transform: scale(1.2);
+// }
+
+// @import "compass";
+
+// @mixin horizontal-align-justify {
+//   text-align: justify;
+
+//   & > * {
+//     @include inline-block;
+//   }
+
+//   &::after {
+//     content: '';
+//     @include inline-block;
+//     width: 100%;
+//   }
+// }
+
+// @mixin vertical-align-middle {
+
+//   h1 {
+//     height: 100%;
+
+//     &::before {
+//       content:'';
+//       @include inline-block;
+//       vertical-align: middle;
+//       height: 100%;
+//     }
+//   }
+
+//   & > * {
+//     vertical-align: middle;
+//   }
+
+
+// }
+
+// @import url(http://fonts.googleapis.com/css?family=Lato:400,700italic);
+// * { padding: 0; margin: 0; }
+// body { background: #1abc9c; font-family: 'Lato', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+
+
+// header {
+//   text-align: justify;
+//   letter-spacing: 1px;
+//   height: 8em;
+//   padding: 2em 10%;
+//   background: #2c3e50;
+//   color: #fff;
+
+//   h1,
+//   nav {
+//     @include inline-block;
+//     vertical-align: middle;
+//   }
+
+//   &:after {
+//     @include inline-block;
+//     content: '';
+//     width: 100%;
+//   }
+
+//   h1 {
+//     font-size: 2em;
+//     height: 100%;
+
+//     &:before {
+//       content:'';
+//       @include inline-block;
+//       vertical-align: middle;
+//       height: 100%;
+//     }
+//   }
+
+//   nav {
+//     vertical-align: middle;
+//   }
+// }
+
+// header {
+//   background: #2c3e50;
+//   height: auto;
+//   @include horizontal-align-justify;
+//   @include vertical-align-middle;
+//   h1 {
+//     //width: 30%;
+//   }
+
+//   nav {
+//     //width: 60%;
+//     //@include horizontal-align-justify;
+//   }
+// }
+
+
+
+// header {
+//     text-align: justify;
+//     height: 8em;
+//     padding: 2em 5%;
+//     background: #2c3e50;
+//     color: #fff;
+// }
+
+// header::after {
+//     content: '';
+//     display: inline-block;
+//     width: 100%;
+// }
+
+// header > div,
+// header nav,
+// header > div h1 {
+//     display: inline-block;
+//     vertical-align: middle;
+//     text-align: left;
+// }
+
+// header > div {
+//     width: 50%;
+//     height: 100%;
+// }
+
+// header > div::before {
+//     content: '';
+//     display: inline-block;  
+//     vertical-align: middle;
+//     height: 100%;
+// }
+

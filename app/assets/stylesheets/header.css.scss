@@ -1,0 +1,341 @@
+@import "compass";
+@import "compass/reset";
+@import "susy";
+$main-black: #151f22;
+$main-grey: #293335;
+$main-green: #3cb371;
+$main-red: #e7604a;
+
+$text-main-white: #fff;
+$text-main-grey: #a7a7a9;
+
+//Rhythm
+$base-font-size: 16px;
+$base-line-height: 1.5 * $base-font-size;
+@include establish-baseline;
+//@include border-box-sizing;
+
+@mixin adjust-to($container-size, $font-size: $base-font-size){
+  @include adjust-font-size-to($font-size);
+  @include adjust-leading-to($container-size/$base-line-height, $font-size);
+}
+
+@mixin horizontal-align-justify {
+  text-align: justify;
+  
+  & > * {
+    @include inline-block;
+  }
+  
+  &::after {
+    content: '';
+    @include inline-block;
+    width: 100%;
+  }
+}
+
+@mixin vertical-align($align: middle) {
+  &:before {
+    @include inline-block;
+    content: '';
+    height: 100%;
+    vertical-align: $align;
+  }
+
+  & > * {
+    @include inline-block;
+    vertical-align: $align;
+  }
+}
+
+.vertical-align {
+  @include vertical-align;
+}
+
+@mixin inherited-height($height, $hidden: false) {
+  height: $height; 
+  @if $hidden {
+    overflow: hidden;
+  }
+
+  & > * {
+    height: $height;
+    @if $hidden {
+      overflow: hidden;
+    }
+  }
+} 
+
+// Setting up the Magic Grid
+$total-columns: 24; // 12 columns
+$column-width: 2em; // columns are 4em wide
+$gutter-width: .5em; // with 1em gutters
+$grid-padding: $gutter-width; // and 1em padding on the grid container
+
+//shadow colors
+$shadow-color-std: #31393d;
+
+$default-text-shadow-color: $shadow-color-std;
+$default-text-shadow-blur: 1px;
+$default-text-shadow-v-offset: 1px;
+$default-text-shadow-h-offset: 1px;
+$default-text-shadow-spread: false;
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #ebebeb;
+}
+
+// HORIZONTAL-JUSTIFY-TEST
+// ______________________________________
+// .horizontal-align-justify {
+//   @include horizontal-align-justify;
+// }
+
+
+// .top, .bottom {
+//   width: 49%;
+//   //@include horizontal-align-justify;
+// }
+
+// header {
+//   background-color: blue;
+// }
+
+// header, .row, nav {
+//   @include horizontal-align-justify;
+//   @include inherited-height(50px);
+// }
+
+// .mainMenu, .subMenu {
+//   width: 60%
+// }
+// ______________________________________
+
+.row {
+  @include container;
+}
+
+header {
+
+  // grid__________________________________
+
+  .logo, .helper {
+    @include span-columns(5);
+
+  }
+
+  .mainMenu, .subMenu {
+    @include span-columns(14);
+  }
+
+  .authentication, .search {
+    @include span-columns(5);
+    @include omega;
+  }
+
+  // ______________________________________
+
+
+  //spaces_________________________________
+
+  .authentication, .search {
+    text-align: right;
+  }
+
+  nav {
+    @include horizontal-align-justify;
+  }
+
+  // ______________________________________
+
+
+  //sizes__________________________________
+
+  .top {
+    @include inherited-height(50px, true);
+  }
+
+  .bottom {
+    @include inherited-height(30px, true);
+  }
+
+  // ______________________________________
+  
+
+  //colors_________________________________
+
+  .top {
+    background-color: $main-black;
+  }
+
+  .bottom {
+    background-color: $main-grey;
+  }
+
+  a {
+    color: white;
+  }
+
+  // ______________________________________
+
+
+  //typography_____________________________
+  a {
+    text-decoration: none;
+  }
+  // ______________________________________
+
+
+  // a {
+  //   color: white;
+  //   text-decoration: none;
+  // }
+
+  // .top {
+  //   @include inherited-height(50px, true);
+  //   background-color: $main-black;
+  // }
+
+  // .bottom {
+  //   @include inherited-height(30px, true);
+  //   background-color: $main-grey;
+  // }
+
+  // .logo, .helper {
+  //   @include span-columns(5);
+  // }
+
+  // .mainMenu, .subMenu {
+  //   @include span-columns(14);
+  // }
+
+  // .authentication, .search {
+  //   @include span-columns(5);
+  //   @include omega;
+
+  //   text-align: right;
+  // }
+
+  // nav {
+  //   @include horizontal-align-justify;
+  // }
+}
+  
+
+// nav {
+//   background-color: #151f22;
+//   text-decoration: none;
+  
+//   ul {
+//     display: table;
+//     width: 60%;
+//     margin: auto;
+//     text-align: center;
+//     li {
+//       //display: inline;
+//       display: table-cell;
+//     }
+//   }
+  
+
+//   a {
+//     @include inline-block;
+//     @include transition-property(color, font-weight);
+//     @include transition-duration(0, .2s);
+//     color: $text-main-grey;
+//     text-decoration: none;
+//     font-weight: 300;
+//     // -webkit-transition: -webkit-transform .5s, background-color 1s ease-in .5s;
+//     // transition: transform .5s, background-color 1s ease-in .5s;
+
+//     &:hover {
+//       color: $text-main-white;
+//       font-weight: 400;
+//       //-webkit-transform: scale(1.2);
+//       //@include scale(1.1);
+//     }
+//   }
+
+// }
+
+// nav {
+//   margin: 0 100px;
+//   ul {
+//     text-align: justify;
+
+//     // Обнуляем родителя
+//     line-height: 0;
+//     font-size: 1px; // Для Opera
+
+//     // for IE6-7
+//     text-justify: newspaper;
+//     zoom:1;
+
+//     &:after {
+//       width: 100%;
+//       height: 0px;
+//       visibility: hidden;
+//       overflow: hidden;
+//       content: '';
+//       @include inline-block;
+
+//     }
+
+//     li {
+//       @include inline-block;
+//       text-align: center;
+      
+//       /* Востанавливаем у потомков, кроме последнего*/
+//       line-height: normal;
+//       font-size: 16px;
+
+//       /* Без него в Opera будет отступ под элементами */
+//       vertical-align: top;
+
+//     }
+//   }
+// }
+
+
+
+.block {
+  @include vertical-align;
+  //text-align: center;
+  background: #c0c0c0;
+  border: #a0a0a0 solid 1px;
+  margin: 20px;
+}
+ 
+ .centered {
+  width: 300px;
+  padding: 10px 15px;
+  border: #a0a0a0 solid 1px;
+  background: #f5f5f5;
+ }
+
+// .block:before {
+//   content: '';
+//   display: inline-block;
+//   height: 100%; 
+//   vertical-align: middle;
+//   //margin-right: -0.25em; /* Adjusts for spacing */
+    
+//   For visualization 
+//   background: #808080; width: 5px;
+ 
+//  }
+ 
+// .centered {
+//   display: inline-block;
+//   vertical-align: middle;
+//   width: 300px;
+//   padding: 10px 15px;
+//   border: #a0a0a0 solid 1px;
+//   background: #f5f5f5;
+//  }
+
+.block {
+  // @include horizontal-align-justify;
+}
+

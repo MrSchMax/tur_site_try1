@@ -1,0 +1,177 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+
+// @import compass
+// @import compass/reset
+// @import susy
+// @import lu-menu-mixins
+
+// //Rhythm
+// $base-font-size: 16px
+// $base-line-height: 1.5 * $base-font-size
+// +establish-baseline
+// +border-box-sizing
+
+// @mixin adjust-to($container-size, $font-size: $base-font-size)
+//   +adjust-font-size-to($font-size)
+//   +adjust-leading-to($container-size/$base-line-height, $font-size)
+
+
+
+// // Setting up the Magic Grid
+// $total-columns: 24 // 12 columns
+// $column-width: 2em // columns are 4em wide
+// $gutter-width: .5em // with 1em gutters
+// $grid-padding: $gutter-width / 2 // and 1em padding on the grid container
+
+// //constants
+
+// //background colors
+// $main-black: #151f22
+// $main-grey: #293335
+// $main-green: #3cb371
+// $main-red: #e7604a
+// //text colors
+// $text-main-white: #fff
+// $text-main-grey: #a7a7a9
+
+// //shadow colors
+// $shadow-color-std: #31393d
+
+// $default-text-shadow-color: $shadow-color-std
+// $default-text-shadow-blur: 1px
+// $default-text-shadow-v-offset: 1px
+// $default-text-shadow-h-offset: 1px
+// $default-text-shadow-spread: false
+
+// // html
+// //   font-family: 'Open Sans', sans-serif
+// //   background-color: #ebebeb
+// //   +baseline-grid-background
+
+// $height-header-top: 3.125 * $base-font-size  //50px
+// $height-header-bottom: 1.875 * $base-font-size //30px
+// $height-authentication-btn: 1.875 * $base-font-size //30px
+// $font-size-nav-links: $base-font-size
+// $font-size-logo: 1.5 * $base-font-size
+// $font-size-authentication-btn: .875 * $base-font-size
+
+
+
+// header
+//   +single-text-shadow
+
+  
+//   .logo
+//     +span-columns(6)
+
+//     a
+//       font-family: 'Ubuntu Condensed', sans-serif
+//       font-weight: 400
+//       text-transform: uppercase
+//       letter-spacing: 3px
+//       // +unstyled-link
+//       text-decoration: none
+//       color: white
+//       +adjust-to($height-header-top, $font-size-logo)
+//       +transition
+//       margin-left: .5 * $base-font-size
+
+//   nav
+//     +span-columns(12,24)
+//     +nav-stretch($font-size-nav-links)
+
+//     a
+//       font-family: 'Open Sans', sans-serif
+//       text-transform: uppercase
+//       +unstyled-link
+//       color: $text-main-grey
+//       font-weight: 300
+//       +adjust-to($height-header-top, $font-size-nav-links)
+//       +transition(color, border)
+//       +transition-duration(0.2s, 0.5s)
+
+//       &.active
+//         color: $text-main-white
+
+//       &:hover
+//         color: $text-main-white
+//         //border-top: 1px solid $text-main-grey
+//         border-bottom: 1px solid $text-main-grey
+
+
+
+//   .authentication
+//     +span-columns(6 omega)
+//     text-align: right
+//     line-height: 50px
+
+//     a
+      
+
+//     // a
+//     //   +inline-block
+//     //   background-color: $main-green
+//     //   color: $text-main-white
+//     //   +border-radius(2px)
+//     //   font-size: 14px
+//     //   line-height: 14px
+//     //   margin-left: 10px
+//     //   margin-top: 10px
+//     //   margin-bottom: 10px
+//     //   padding-top: 8px
+//     //   padding-bottom: 8px
+//       //+adjust-to($height-header-top, $font-size-authentication-btn)
+//       //+authentication-btn($height-authentication-btn, $font-size-authentication-btn, $main-green)
+//       // background-color: $main-grey
+
+//     // .signupBtn
+//     //   +authentication-btn($height-authentication-btn, $font-size-authentication-btn, $main-green)
+
+//     // .loginBtn
+//     //   +authentication-btn($height-authentication-btn, $font-size-authentication-btn, $main-red)
+
+
+//   .top
+//     background-color: $main-black
+//     height: $height-header-top
+
+
+//   .bottom
+//     background-color: $main-grey
+//     height: $height-header-bottom
+
+
+
+
+//   .row
+//     +container
+
+// .parent
+//   height: 200px
+//   width: 200px
+//   background-color: blue
+//   margin-top: 100px
+//   .children
+//     display: inline-block
+//     padding: 50px
+//     //width: 300px
+//     margin-top: 100px
+//     //margin-bottom: 50px
+//     background-color: green
+    
+
+
+
